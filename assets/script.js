@@ -28,3 +28,6 @@ const countdown = document.querySelector('countdown');
 
 
 // highscore func here?
+
+//event listener to start quiz
+startButton.addEventListener('click', startQuiz);
