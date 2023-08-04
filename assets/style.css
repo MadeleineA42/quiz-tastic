@@ -44,3 +44,24 @@ body{
 footer {
     text-align: center;
 }
+
+#question-container {
+    display: none;
+}
+
+#end-screen {
+    display: none;
+}
+
+#end-screen p   {
+    font-weight: bold;
+}
+
+#choices li {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#choices li:hover   {
+    background-color: #b7c9cc;
+}
