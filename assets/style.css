@@ -9,7 +9,8 @@ body{
     background: #CACAE8;
 }
 
-.main-box,
+.main-container,
+.quiz-container,
 .end-screen   {
     background: #E1E0E4;
     width: 100%;
@@ -18,8 +19,28 @@ body{
     border: 20px;
     padding: 30px;
     text-align: center;
+    color: rgb(232, 98, 148);
 }
 
+.main-container h1  {
+    font-size: 40px;
+    color: #f374ae;
+    font-weight: 600;
+    border-bottom: 5px solid #32533d;
+    padding-bottom: 30 px; 
+}
+
+#start  {
+    background-color: #E1E0E4;
+    color: #e42633; 
+    font-size:20px;
+    font-weight: 700;
+    width: 100%;
+    border: 3px solid #32533d;
+    padding: 1%;
+    margin: 10px auto 0;
+    cursor: pointer;
+}
 footer {
     text-align: center;
 }
