@@ -74,7 +74,19 @@ function showQuestion() {
 
 
 
-// score keeping func here
+// checks answer func here
+
+function checkAnswer(choiceIndex) {
+    const question = questions[currentQuestionIndex];
+    if(choiceIndex === question.correctChoice) {
+        resultElement.textContent = 'Correct!';
+    } else {
+        resultElement.textContent = 'Incorrect!';
+        timeLeft -= 10;
+    }
+}
+
+
 
 
 
