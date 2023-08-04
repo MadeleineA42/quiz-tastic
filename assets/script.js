@@ -12,7 +12,38 @@ const choicesList = document.querySelector('choices');
 const endScreen = document.querySelector('end-screen');
 const endResult = document.querySelector('end-result');
 const countdown = document.querySelector('countdown');
-// quiz function
+
+//quiz q's
+const questions = [
+    {
+        question: "Commonly used data strings DO NOT include ___.",
+        choices: ["a. strings", "b. booleans", "c. alerts", "d. numbers"],
+        answer: "c."
+    },
+    {
+        question: "Arrays in JavaScript can be used to store ___.",
+        choices: ["a. numbers and strings", "b. other arrays", "c. booleans", "d. all of the above"],
+        answer: "d."
+    },
+    {
+        question: "Sting values must be enclosed within ___ when being assigned variables",
+        choices: ["a. quotes", "b. commas", "c. curly brackets", "d. parenthesis"],
+        answer: "a."
+    },
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choices: ["a. JavaScript", "b. terminal/bash", "c. for loops", "d. console.log"],
+        answer: "d."
+    },
+    {
+        question: "The condition in an if/else statement is enclosed with ___.",
+        choices: ["a. quotes", "b. parenthesis", "c. curly brackets", "d. square brackets"],
+        answer: "b."
+    },
+
+]
+
+// start quiz function
 
 
 
