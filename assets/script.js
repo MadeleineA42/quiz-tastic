@@ -13,6 +13,10 @@ const endScreen = document.querySelector('end-screen');
 const endResult = document.querySelector('end-result');
 const countdown = document.querySelector('countdown');
 
+let currentQuestionIndex = 0;
+let timeLeft = 75;
+let score = 0;
+
 //quiz q's
 const questions = [
     {
@@ -41,13 +45,31 @@ const questions = [
         answer: "b."
     },
 
-]
+];
 
 // start quiz function
+function startQuiz() {
+    console.log('Good luck!');
+    startButton.style.display = 'none';
+    questionContainer.style.display = 'block';
+    showQuestion();
+    startTimer();
+}
 
 
+// show question functions here
+function showQuestion() {
+    const question = questions[currentQuestionIndex];
+    questionElement.textContent = question.question;
+    choices.innerHTML = '';
 
-// start timer function here
+    question.choices.forEach((choice, index) => {
+        const li = document.createElement('li');
+        li.textContent = choice;
+        li.addEventListener('click', () => checkAnswer(index));
+        choicesList.appendChild(li);
+    });
+}
 
 
 
