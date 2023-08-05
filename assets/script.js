@@ -80,8 +80,9 @@ function showQuestion() {
 function checkAnswer(choiceIndex) {
     const resultElement = document.createElement('p');
     const question = questions[currentQuestionIndex];
-    if (choiceIndex === question.correctChoice) {
+    if (question.choices[choiceIndex] === question.answer) {
         resultElement.textContent = 'Correct!';
+        score += 10; //adds 10 points
     } else {
         resultElement.textContent = 'Incorrect!';
         timeLeft -= 10;
