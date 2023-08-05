@@ -49,11 +49,11 @@ footer {
     display: none;
 }
 
-#end-screen {
+.end-screen {
     display: none;
 }
 
-#end-screen p   {
+.end-screen p   {
     font-weight: bold;
 }
 

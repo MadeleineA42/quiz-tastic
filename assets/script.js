@@ -5,13 +5,14 @@
 // I am able to see my score and other highscores and record my initials for the highscores
 
 // global variables
-const startButton = document.querySelector('start');
-const questionContainer = document.querySelector('question-container');
-const questionElement = document.querySelector('question');
-const choicesList = document.querySelector('choices');
-const endScreen = document.querySelector('end-screen');
-const endResult = document.querySelector('end-result');
-const countdown = document.querySelector('countdown');
+//class = . id=#
+const startButton = document.querySelector('#start');
+const quizContainer = document.querySelector('.quiz-container');
+const questionElement = document.querySelector('#question');
+const choicesList = document.querySelector('#choices');
+const endScreen = document.querySelector('.end-screen');
+const endResult = document.querySelector('#end-result');
+const countdown = document.querySelector('#countdown');
 
 let currentQuestionIndex = 0;
 let timeLeft = 75;
@@ -78,21 +79,43 @@ function showQuestion() {
 
 function checkAnswer(choiceIndex) {
     const question = questions[currentQuestionIndex];
-    if(choiceIndex === question.correctChoice) {
+    if (choiceIndex === question.correctChoice) {
         resultElement.textContent = 'Correct!';
     } else {
         resultElement.textContent = 'Incorrect!';
         timeLeft -= 10;
     }
 }
+endScreen.style.display = 'block';
+setTimeout(() => {
+    endScreen.style.display = 'none';
+    currentQuestionIndex++;
 
+    if (currentQuestionIndex < questions.length) {
+        showQuestion();
+    } else {
+        endQuiz();
+    }
+}, 1000);
 
+function endQuiz() {
+    clearInterval(timerInterval);
+    questionContainer.style.display = 'none';
+}// highscore func here?
 
+let timerInterval;
 
+function startTimer() {
+    timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.textContent = timeLeft;
 
+        if (timeLeft <= 0) {
+            endQuiz();
+        }
+    }, 1000);
+}
 
-
-// highscore func here?
 
 //event listener to start quiz
 startButton.addEventListener('click', startQuiz);
