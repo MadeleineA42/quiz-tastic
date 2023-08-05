@@ -78,6 +78,7 @@ function showQuestion() {
 // checks answer func here
 
 function checkAnswer(choiceIndex) {
+    const resultElement = document.createElement('p');
     const question = questions[currentQuestionIndex];
     if (choiceIndex === question.correctChoice) {
         resultElement.textContent = 'Correct!';
