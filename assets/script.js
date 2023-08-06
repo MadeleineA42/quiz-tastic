@@ -47,23 +47,24 @@ const questions = [
     },
 
 ];
-
+//event listener to start quiz
+startButton.addEventListener('click', startQuiz);
 // start quiz function
 function startQuiz() {
     console.log('Good luck!');
     startButton.style.display = 'none';
-    questionContainer.style.display = 'block';
-    questionNumber = 0;
-    showQuestion(questionNumber);
-    // startTimer();
+    showQuestion();
+    startTimer();
 }
 
 
 // show question functions here
 function showQuestion() {
     const question = questions[currentQuestionIndex];
+    questionNumber = currentQuestionIndex ++ ;
     questionElement.textContent = question.question;
-    choices.innerHTML = '';
+    questionElement.innerHTML = '';
+    choicesList.innerHTML = '';
 
     question.choices.forEach((choice, index) => {
         const li = document.createElement('li');
@@ -120,6 +121,6 @@ function startTimer() {
 }
 
 
-//event listener to start quiz
-startButton.addEventListener('click', startQuiz);
+
+
 choicesList.addEventListener('click', 'c.');
