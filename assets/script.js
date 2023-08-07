@@ -60,7 +60,7 @@ function startQuiz() {
 
 // show question functions here
 function showQuestion() {
-    const question = questions[currentQuestionIndex];
+    currentQuestion = questions[currentQuestionIndex];
     questionNumber = currentQuestionIndex ++ ;
     questionElement.textContent = question.question;
     questionElement.innerHTML = '';
