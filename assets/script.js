@@ -54,7 +54,7 @@ function startQuiz() {
     console.log('Good luck!');
     startButton.style.display = 'none';
     showQuestion();
-    startTimer();
+    countdown();
 }
 
 
