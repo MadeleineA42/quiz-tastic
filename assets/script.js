@@ -53,8 +53,8 @@ startButton.addEventListener('click', startQuiz);
 function startQuiz() {
     console.log('Good luck!');
     startButton.style.display = 'none';
+    startTimer();
     showQuestion();
-    countdown();
 }
 
 
@@ -62,11 +62,11 @@ function startQuiz() {
 function showQuestion() {
     currentQuestion = questions[currentQuestionIndex];
     questionNumber = currentQuestionIndex ++ ;
-    questionElement.textContent = question.question;
-    questionElement.innerHTML = '';
+    questionElement.textContent = currentQuestion.question;
+    // questionElement.innerHTML = '';
     choicesList.innerHTML = '';
 
-    question.choices.forEach((choice, index) => {
+    currentQuestion.choices.forEach((choice, index) => {
         const li = document.createElement('li');
         li.textContent = choice;
         li.addEventListener('click', () => checkAnswer(index));
@@ -79,28 +79,21 @@ function showQuestion() {
 
 // checks answer func here
 
-function checkAnswer(choiceIndex) {
-    const resultElement = document.createElement('p');
-    const question = questions[currentQuestionIndex];
-    if (question.choices[choiceIndex] === question.answer) {
-        resultElement.textContent = 'Correct!';
-        score += 10; //adds 10 points
-    } else {
-        resultElement.textContent = 'Incorrect!';
+function checkAnswer(choiceIndex)   {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (currentQuestion.choices[choiceIndex] === currentQuestion.answer)    {
+        score +=10;
+    }else {
         timeLeft -= 10;
     }
-}
-endScreen.style.display = 'block';
-setTimeout(() => {
-    endScreen.style.display = 'none';
-    currentQuestionIndex++;
-
-    if (currentQuestionIndex < questions.length) {
+    currentQuestionIndex==;
+    if (currentQuestionIndex < questions.length)    {
         showQuestion();
-    } else {
+    }else {
         endQuiz();
     }
-}, 1000);
+}
+
 
 function endQuiz() {
     clearInterval(timerInterval);
