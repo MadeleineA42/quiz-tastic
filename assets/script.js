@@ -58,27 +58,24 @@ function startQuiz() {
 }
 
 
-// show question functions here
 function showQuestion() {
-    currentQuestion = questions[currentQuestionIndex];
-    questionNumber = currentQuestionIndex ++ ;
-    questionElement.textContent = currentQuestion.question;
-    // questionElement.innerHTML = '';
-    choicesList.innerHTML = '';
+    if (currentQuestionIndex < questions.length)    {
+        const currentQuestion = questions[currentQuestionIndex];
+        questionElement.textContent = currentQuestion.question;
+        choicesList.innerHTML = '';
 
-    currentQuestion.choices.forEach((choice, index) => {
-        const li = document.createElement('li');
-        li.textContent = choice;
-        li.addEventListener('click', () => checkAnswer(index));
-        choicesList.appendChild(li);
-    });
+        currentQuestion.choices.forEach((choice, index) => {
+            const li = document.createElement('li');
+            li.textContent = choice;
+            li.addEventListener('click', () => checkAnswer(index));
+            choicesList.appendChild(li);
+        });
+    } else {
+        endQuiz;
+    } 
 }
 
-
-
-
 // checks answer func here
-
 function checkAnswer(choiceIndex)   {
     const currentQuestion = questions[currentQuestionIndex];
     if (currentQuestion.choices[choiceIndex] === currentQuestion.answer)    {
