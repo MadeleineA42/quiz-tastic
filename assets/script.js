@@ -86,7 +86,7 @@ function checkAnswer(choiceIndex)   {
     }else {
         timeLeft -= 10;
     }
-    currentQuestionIndex==;
+    currentQuestionIndex++;
     if (currentQuestionIndex < questions.length)    {
         showQuestion();
     }else {
@@ -94,18 +94,20 @@ function checkAnswer(choiceIndex)   {
     }
 }
 
-
 function endQuiz() {
     clearInterval(timerInterval);
-    questionContainer.style.display = 'none';
-}// highscore func here?
+    quizContainer.style.display = 'none';
+    endScreen.style.display = 'block';
+    // highscore here 
+    endResult.textContent = 'Your score is: ' + score;
+}
 
 let timerInterval;
 
 function startTimer() {
     timerInterval = setInterval(() => {
         timeLeft--;
-        timerElement.textContent = timeLeft;
+        countdown.textContent = timeLeft;
 
         if (timeLeft <= 0) {
             endQuiz();
@@ -114,6 +116,3 @@ function startTimer() {
 }
 
 
-
-
-choicesList.addEventListener('click', 'c.');
