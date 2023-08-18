@@ -3,3 +3,6 @@ This is a simple code quiz. The user is presented with code related questions in
 
 <img src="assets/images/Screen Shot 2023-07-23 at 12.33.29 PM.png" alt="mockup screenshot">
 <img src="assets/images/Screen Shot 2023-07-23 at 12.34.09 PM.png" alt="mockup screenshot">
+
+## Deployed site
+https://madeleinea42.github.io/quiz-tastic/
